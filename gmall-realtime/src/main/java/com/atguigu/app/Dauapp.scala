@@ -46,7 +46,8 @@ object Dauapp {
       })
     /*startUpLogDStream.cache()*/
 
-    startUpLogDStream.count().print()
+//    startUpLogDStream.count().print()
+    startUpLogDStream.print()
     //批次间去重
     val filterByredis: DStream[StartUpLog] = DauHandler.filterByredis(startUpLogDStream,sparkConf)
     //批次内去重
