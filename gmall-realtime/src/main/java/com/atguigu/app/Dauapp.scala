@@ -49,7 +49,7 @@ object Dauapp {
    startUpLogDStream.count().print()
     startUpLogDStream.print()
     //批次间去重
-    val filterByredis: DStream[StartUpLog] = DauHandler.filterByredis(startUpLogDStream,sparkConf)
+    val filterByredis: DStream[StartUpLog] = DauHandler.filterByredis(startUpLogDStream)
     //批次内去重
     val filterBygroup: DStream[StartUpLog] = DauHandler.filterByGroup(filterByredis)
     filterBygroup.cache()
